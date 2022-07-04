@@ -16,7 +16,7 @@
 
             
 <!-- BEGIN BANER --> 
-<div class=" flex flex-row justify-center mx-auto bg-first px-10 ">
+<div class=" flex flex-row justify-center mx-auto bg-first px-10 pb-2 ">
         <div class="max-w-md"><img src="img/logo.png" alt="logo unicordoba">
     </div>
 </div>
@@ -106,9 +106,97 @@
     </div>
  </aside>
 
-  <div>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, aliquid. Nostrum soluta tenetur quaerat alias. Accusantium dolorum, voluptatem consectetur adipisci perspiciatis reiciendis corporis nam voluptatibus eaque quidem? Repellat, dolorum quas!
+  <div class=" flex flex-col justify-center items-center font-sans  mt-2 border" >
+    <div class="block text-3xl pt-3  ">
+        <h2 class="font-bold  ">Mis Proyectos</h2>
+    </div>
+    <div class="block pb-3"><h3 class="pb-2"> Administración general de mis proyectos</h3> </div>
   </div>
+  <div class=" flex flex-col justify-center items-center font-sans  mt-2 border" >
+    <div class="block pb-3 "><h3 class="pb-2 text-green-500 text-2xl"> :::: Datos Personales::::</h3> </div>
+  </div>
+ <!--   aqui empieza el formulario -->
+ 
+<form>
+    <div class="mb-6">
+        <label for="cod" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Codigo Del Proyecto</label>
+        <input type="text" id="cod" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+      </div>
+
+    <div class="mb-6">
+      <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nombre Completo</label>
+      <input type="text" id="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Roberto GARCIA" required="">
+    </div>
+
+    <label for="type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Tipo de Proyecto</label>
+<select id="type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  <option>Seleccione el tipo de Proyecto</option>
+  <option>Investigacion</option>
+  <option>Extensión</option>
+</select>
+
+<div class="mb-6">
+    <label for="fecini" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Fecha de Inicio</label>
+    <input type="date" id="fecini" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+  </div>
+
+  <div class="mb-6">
+    <label for="fecfin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Fecha de Finalizacion</label>
+    <input type="date" id="fecfin" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+  </div>
+  <div class="mb-6">
+    <label for="responsable" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Responsable</label>
+    <input type="text" id="responsable" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
+  </div>
+  <div class="mb-6">
+    <label for="presupuesto" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Presupuesto</label>
+    <input type="number" id="presupuesto"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="$$$$" required="">
+  </div>
+   
+  <label for="responsable" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tipo de Persona</label> 
+<fieldset>
+  <legend class="sr-only">Personas</legend>
+
+  <div class="flex items-center mb-4">
+    <input id="Persona-option-1" type="radio" name="Personas" value="Estudiante" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" checked="">
+    <label for="Persona-option-1" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+      Estudiante
+    </label>
+  </div>
+
+  <div class="flex items-center mb-4">
+    <input id="Persona-option-2" type="radio" name="Personas" value="Profesor" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+    <label for="Persona-option-2" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+      Profesor
+    </label>
+  </div>
+</fieldset>
+
+<label for="semestre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Semetre Estudiante</label>
+<select id="semestre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  <option>Seleccione un Semetre</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+  <option>6</option>
+  <option>7</option>
+  <option>8</option>
+  <option>9</option>
+  <option>10</option>
+</select>
+
+<div class="items-center flex flex-row justify-center ">
+    <button  type="submit" class=" mt-3 justify-self-center relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+            Enviar
+        </span>
+      </button>
+</div>
+  </form>
+  
+  
 
 
 
