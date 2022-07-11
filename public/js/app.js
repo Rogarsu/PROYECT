@@ -118,6 +118,8 @@ console.log(valor);
     $("#presupuesto").val('');
     $("#semestre").val('');
     $("#cod").focus();
+    document.getElementById('profesor').checked = false;
+    document.getElementById('estudiante').checked = false;
 }
 
 function borrar(index){
@@ -142,7 +144,36 @@ function update(index){
             $("#presupuesto").val(data[i].presupuesto);
             $("#semestre").val(data[i].semestre);
             $("#cod").focus(); 
+            if(data[i].persona==='Estudiante'){
+             document.getElementById('estudiante').checked = true;
+            }
+            if(data[i].persona==='Profesor'){
+                document.getElementById('profesor').checked = true;
+               }
         }    
 }
 borrar(index);
+}
+
+function seleccion(){
+    if(document.getElementById('estudiante').checked === true){
+        if(document.getElementById('option').classList.contains('hidden')===true){
+            document.getElementById('option').classList.remove('hidden');
+        }
+        if(document.getElementById('option2').classList.contains('hidden')===false){
+            document.getElementById('option2').classList.add('hidden');
+        }
+
+        
+      }
+
+      if(document.getElementById('profesor').checked === true){
+        if(document.getElementById('option2').classList.contains('hidden')===true){
+            document.getElementById('option2').classList.remove('hidden');
+        }
+        if(document.getElementById('option').classList.contains('hidden')===false){
+            document.getElementById('option').classList.add('hidden');
+        }
+        
+      }
 }
