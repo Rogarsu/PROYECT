@@ -13,7 +13,7 @@
     <script src="../path/to/flowbite/dist/datepicker.js"></script>
     <title>Index</title>
 </head>
-<body>
+<body class="px-4 py-2">
 
             
 <!-- BEGIN BANER --> 
@@ -122,11 +122,13 @@
     <div class="mb-6">
         <label for="cod" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Codigo Del Proyecto</label>
         <input type="text" id="cod" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+        <p id="codalerta" class=" invisible text-red-500 text-xs italic">Ingresa el codigo del proyecto.</p>
       </div>
 
     <div class="mb-6">
-      <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nombre Completo</label>
+      <label for="nombre"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nombre Completo</label>
       <input type="text" id="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Nombre" required="">
+      <p id="nombrealerta" class=" invisible text-red-500 text-xs italic">Ingresa el Nombre del proyecto.</p>
     </div>
 
     <label for="type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Tipo de Proyecto</label>
@@ -135,23 +137,29 @@
   <option>Investigacion</option>
   <option>Extensión</option>
 </select>
+<p id="typealerta" class=" invisible text-red-500 text-xs italic">Seleccione el tipo de Proyecto.</p>
 
 <div class="mb-6">
     <label for="fecini" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Fecha de Inicio</label>
     <input type="date" id="fecini" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+    <p id="fecinialerta" class=" invisible text-red-500 text-xs italic">Seleccione una fecha.</p>
   </div>
 
   <div class="mb-6">
     <label for="fecfin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Fecha de Finalizacion</label>
     <input type="date" id="fecfin" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+    <p id="fecfinalerta" class=" invisible text-red-500 text-xs italic"> Seleccione una fecha.</p>
   </div>
   <div class="mb-6">
     <label for="responsable" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Responsable</label>
     <input type="text" id="responsable" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
+    <p id="responsablealerta" class=" invisible text-red-500 text-xs italic">Escriba el Nombre del Responsable.</p>
   </div>
   <div class="mb-6">
     <label for="presupuesto" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Presupuesto</label>
-    <input type="number" id="presupuesto"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="$$$$" required="">
+    <input type="number" id="presupuesto"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="$$$$" value="0" required="">
+    <p id="presupuestoalerta" class=" invisible text-red-500 text-xs italic">Escriba la cantidad del presupuesto.</p>
+    <p id="rangoalerta" class=" invisible text-red-500 text-xs italic">Escriba un valor entre 1000000 y 10000000.</p>
   </div>
    
   <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tipo de Persona</label> 
@@ -160,13 +168,14 @@
     <label for="estudiante" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Estudiante</label>
 </div>
 <div class="flex items-center mb-2">
-    <input checked id="profesor" type="radio" value="" name="Personas" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
+    <input   id="profesor" type="radio" value="" name="Personas" class="  w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600">
     <label for="profesor" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Profesor</label>
 </div>
+<p id="personaalerta" class=" invisible text-red-500 text-xs italic">Escoje a un tipo de Persona.</p>
 
-<label for="semestre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Semetre Estudiante</label>
+<label for="semestre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Semestre Estudiante</label>
 <select id="semestre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-  <option>Seleccione un Semetre</option>
+  <option>Seleccione un Semestre</option>
   <option>1</option>
   <option>2</option>
   <option>3</option>
@@ -178,6 +187,7 @@
   <option>9</option>
   <option>10</option>
 </select>
+<p id="semestrealerta" class=" invisible text-red-500 text-xs italic">Seleccione un Semestre.</p>
 
 <div class="items-center flex flex-row justify-center ">
     <button  type="button" id="enviar" class=" mt-3 justify-self-center relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
@@ -224,8 +234,8 @@
 
 <!-- aqui termina la tabla -->
 
-
-
+<hr>
+<button class="bg-red-500"  onclick="borrar('1')" > prueba </button>
   
 
 
