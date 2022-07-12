@@ -141,13 +141,15 @@
 
 <div class="mb-6">
     <label for="fecini" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Fecha de Inicio</label>
-    <input type="date" id="fecini" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+    <input type="date" id="fecini" value="y"
+    min="2022-01-01" max="2022-12-31"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
     <p id="fecinialerta" class=" invisible text-red-500 text-xs italic">Seleccione una fecha.</p>
   </div>
 
   <div class="mb-6">
     <label for="fecfin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Fecha de Finalizacion</label>
-    <input type="date" id="fecfin" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+    <input type="date" value=""
+    min="2022-01-01" max="2022-12-31"  id="fecfin" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
     <p id="fecfinalerta" class=" invisible text-red-500 text-xs italic"> Seleccione una fecha.</p>
   </div>
   <div class="mb-6">
@@ -256,11 +258,21 @@
 <div id="miModal" class="modal">
   <div class="modal-contenido bg-first rounded-lg ">
     
-    <h2>Mi primer Modal</h2>
-    <p>Este es mi primera ventana modal sin utilizar JavaScript.</p>
+    <h2 class="font-sans text-center">Detalles</h2>
+    <div class="flex flex-col">
+      <div><p>Codigo del  Proyecto:<span id="input"></span></p></div>
+      <div><p>Nombre del  Proyecto:<span id="input2"></span></p></div>
+      <div><p>Tipo de  Proyecto:<span id="input3"></span></p></div>
+      <div><p>Fecha de Inicio del  Proyecto:<span id="input4"></span></p></div>
+      <div><p>Fecha  de finalizacion  Proyecto:<span id="input5"></span></p></div>
+      <div><p>Responsable del  Proyecto:<span id="input6"></span></p></div>
+      <div><p>Presupuesto del  Proyecto:<span id="input7"></span></p></div>
+      <div><p>Encargado del  Proyecto:<span id="input8"></span></p></div>
+      <div><p>Semestre del estudiante:<span id="input9"></span></p></div>
+    </div>
     <hr>
     <div class="flex flex-row justify-center">
-      <a href="#" type="button" class=" m-2 pt-2 text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Green</a>
+      <a href="#" type="button" class=" m-2 pt-2 text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Regresar</a>
     </div>
 
    </div>  
@@ -270,7 +282,7 @@
 <style>
 
 .modal-contenido{
-  width:300px;
+  width:max-content;
   padding: 10px 20px;
   margin: 20% auto;
   position: relative;
