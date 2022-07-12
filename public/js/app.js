@@ -2,7 +2,7 @@ var boton= document.getElementById('enviar');
 var lista=document.getElementById('lista');
 var data=[];
 var valor='';
-var show=0;
+var show=1;
 var fecha="";
 boton.addEventListener("click", validar);
 boton.addEventListener("click", enviar);
@@ -24,8 +24,14 @@ function validar(){
         document.getElementById('typealerta').classList.remove('invisible' );
         show=1;
     }else{
+        document.getElementById('typealerta').classList.add('invisible' );
         show=0;
     }
+
+    if(document.getElementById('type').value ==='Seleccione el tipo de Proyecto'){
+        show=1;
+    }
+
     if(document.getElementById('fecini').value ===''){
         document.getElementById('fecinialerta').classList.remove('invisible' );
         show=1;
@@ -62,6 +68,7 @@ function validar(){
         document.getElementById('rangoalerta').classList.remove('invisible' );
         show=1;
     }else{
+        document.getElementById('rangoalerta').classList.add('invisible');
         show=0;
     }
 
@@ -153,9 +160,11 @@ console.log(valor);
 }
 
 function enviar(){
-    if(show===0){
+    if(show !=1){
         agregar();
     }
+
+    show=1;
 }
 
 function borrar(index){
@@ -217,7 +226,10 @@ function seleccion(){
         }else{
             document.getElementById('personaalerta').classList.add('hidden');
         }
+
       }
+
+      
 }
 function modal(index){
     for (i in data) { 
