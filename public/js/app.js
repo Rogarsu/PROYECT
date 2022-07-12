@@ -2,7 +2,7 @@ var boton= document.getElementById('enviar');
 var lista=document.getElementById('lista');
 var data=[];
 var valor='';
-var show=1;
+var show=0;
 var fecha="";
 boton.addEventListener("click", validar);
 boton.addEventListener("click", enviar);
@@ -11,21 +11,17 @@ function validar(){
     if(document.getElementById('cod').value ===''){
         document.getElementById('codalerta').classList.remove('invisible' );
         show=1;
-    }else{
-        show=0;
+    
     }
     if(document.getElementById('nombre').value ===''){
         document.getElementById('nombrealerta').classList.remove('invisible' );
         show=1;
-    }else{
-        show=0;
+    
     }
     if(document.getElementById('type').value ==='Seleccione el tipo de Proyecto'){
         document.getElementById('typealerta').classList.remove('invisible' );
         show=1;
-    }else{
-        document.getElementById('typealerta').classList.add('invisible' );
-        show=0;
+    
     }
 
     if(document.getElementById('type').value ==='Seleccione el tipo de Proyecto'){
@@ -35,57 +31,63 @@ function validar(){
     if(document.getElementById('fecini').value ===''){
         document.getElementById('fecinialerta').classList.remove('invisible' );
         show=1;
-    }else{
-        show=0;
+    
+    }
+    if(document.getElementById('fecini').value !=''){
+        document.getElementById('fecinialerta').classList.add('invisible' );
     }
     if(document.getElementById('fecfin').value ===''){
         document.getElementById('fecfinalerta').classList.remove('invisible' );
         show=1;
-    }else{
-        show=0;
+    
     }
     if(document.getElementById('fecfin').value !=''){
         document.getElementById('fecfinalerta').classList.add('invisible' );
-        show=1;
-    }else{
-        show=0;
     }
     if(document.getElementById('responsable').value ===''){
         document.getElementById('responsablealerta').classList.remove('invisible' );
         show=1;
-    }else{
-        show=0;
+    
     }
 
-    if(document.getElementById('presupuesto').value == 0){
+
+
+    if(document.getElementById('presupuesto').value === 0){
         document.getElementById('presupuestoalerta').classList.remove('invisible' );
         show=1;
-    }else{
-        show=0;
+    
     }
 
     if(document.getElementById('presupuesto').value < 10000000 && document.getElementById('presupuesto').value != 0 || document.getElementById('presupuesto').value >50000000 && document.getElementById('presupuesto').value != 0){
         document.getElementById('rangoalerta').classList.remove('invisible' );
         show=1;
-    }else{
-        document.getElementById('rangoalerta').classList.add('invisible');
-        show=0;
+    
     }
 
     if(document.getElementById('estudiante').checked === false && document.getElementById('profesor').checked === false){
         document.getElementById('personaalerta').classList.remove('invisible');
         show=1;
-      }else{
-        show=0;
+      
       }
+
+      if(document.getElementById('departamento').value ==='Seleccione un Departamento'){
+        document.getElementById('departamentoalerta').classList.remove('invisible' );
+        
+        show=1;
+      }
+
+      if(document.getElementById('departamento').value !='Seleccione un Departamento'){
+        document.getElementById('departamentoalerta').classList.add('invisible' );
+      }
+      
 
     if(document.getElementById('semestre').value ==='Seleccione un Semestre'){
         document.getElementById('semestrealerta').classList.remove('invisible' );
         
         show=1;
-    }else{
-        show=0;
+    
     }
+
     if(document.getElementById('semestre').value !='Seleccione un Semestre'){
         document.getElementById('semestrealerta').classList.add('invisible' );
 
@@ -112,6 +114,7 @@ var Fechafin = document.getElementById('fecfin').value;
 var Responsable = document.getElementById('responsable').value;
 var Presupuesto = parseFloat(document.getElementById('presupuesto').
 value);
+var Departamento= document.getElementById('departamento').value;
 var Semestre = document.getElementById('semestre').value;
 var persona='';
 if(document.getElementById('estudiante').checked){
@@ -119,6 +122,11 @@ if(document.getElementById('estudiante').checked){
 }
 if(document.getElementById('profesor').checked){
     persona="Profesor";
+}
+
+if(document.getElementById('semestre').classList.contains('invisible')){
+    Semestre='';
+
 }
 
     
@@ -134,7 +142,8 @@ if(document.getElementById('profesor').checked){
             "Responsable":Responsable,
             "presupuesto":Presupuesto,
             "persona":persona,
-            "semestre":Semestre
+            "semestre":Semestre,
+            "departamento":Departamento
         }
    
     
@@ -154,17 +163,18 @@ console.log(valor);
     $("#responsable").val('');
     $("#presupuesto").val('');
     $("#semestre").val('');
+    $("#departamento").val('');
     $("#cod").focus();
     document.getElementById('profesor').checked = false;
     document.getElementById('estudiante').checked = false;
 }
 
 function enviar(){
-    if(show !=1){
+    if(show ===0){
         agregar();
     }
 
-    show=1;
+    show=0;
 }
 
 function borrar(index){
