@@ -136,10 +136,15 @@ if(document.getElementById('profesor').checked){
     persona="Profesor";
 }
 
-if(document.getElementById('semestre').classList.contains('invisible')){
+if(document.getElementById('profesor').checked === true ){
     Semestre='';
 
 }
+if(document.getElementById('estudiante').checked === true){
+    Departamento='';
+
+}
+
 
     
     data.push(
@@ -202,14 +207,16 @@ function update(index){
             $("#fecfin").val(data[i].fend);
             $("#responsable").val(data[i].Responsable);
             $("#presupuesto").val(data[i].presupuesto);
+            $("#semestre").val(data[i].semestre);
+            $("#departamento").val(data[i].departamento);
             $("#cod").focus(); 
             if(data[i].persona==='Estudiante'){
              document.getElementById('estudiante').checked = true;
-             $("#semestre").val(data[i].semestre);
+            
             }
             if(data[i].persona==='Profesor'){
                 document.getElementById('profesor').checked = true;
-                $("#departamento").val(data[i].departamento);
+               
                }
 
                if(document.getElementById('estudiante').checked === true){
@@ -294,8 +301,19 @@ function modal(index){
             document.getElementById('input7').innerHTML = " "+data[i].presupuesto ;
             document.getElementById('input8').innerHTML = " "+data[i].persona;
             document.getElementById('input9').innerHTML = " "+data[i].semestre ;
+            document.getElementById('input10').innerHTML = " "+data[i].departamento ;
+            if(data[i].semestre ===''){
+                document.getElementById('modalestudiante').classList.add('hidden');
+                document.getElementById('modalprofesor').classList.remove('hidden');
+            }
+            if(data[i].departamento === ''){
+                document.getElementById('modalprofesor').classList.add('hidden');
+                document.getElementById('modalestudiante').classList.remove('hidden');
+            }
             
-        }    
+        }   
+        
+       
     
 }
 }
